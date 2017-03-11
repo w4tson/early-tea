@@ -1,0 +1,8 @@
+[package]
+name = "early-tea"
+version = "0.1.0"
+authors = ["paulwatson"]
+build = "build.rs"
+
+[dependencies]
+qml = "0.0.9"
