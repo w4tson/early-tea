@@ -2,9 +2,6 @@
 extern crate qml;
 
 use qml::*;
-use std::fs;
-use std::io;
-use std::path::Path;
 
 fn main() {
     // Create a new QML Engine.
