@@ -1,5 +1,7 @@
 import QtQuick 2.3
 import QtGraphicalEffects 1.0
+import QtQuick.Dialogs 1.0
+
 
 Rectangle {
     id: root;
@@ -12,7 +14,7 @@ Rectangle {
 
     Text {
         id: header;
-        text: "Basic elements";
+        text: foo.name;
         color: constants.wetAsphalt;
         x: 24;
         y: 24;
@@ -42,6 +44,11 @@ Rectangle {
             }
 
             PrimaryButton {
+                mouseField.onClicked: {
+                    foo.simple_receiver();
+                    fileDialog.visible = true
+
+                }
             }
 
             WarningButton {
@@ -150,6 +157,18 @@ Rectangle {
         }
 
 
+    }
+
+    FileDialog {
+        id: fileDialog
+        title: "Please choose a file"
+        folder: shortcuts.home
+        onAccepted: {
+            console.log("You chose: " + fileDialog.fileUrls)
+        }
+        onRejected: {
+            console.log("Canceled")
+        }
     }
 }
 
