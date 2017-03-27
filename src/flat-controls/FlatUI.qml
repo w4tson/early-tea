@@ -161,10 +161,12 @@ Rectangle {
 
     FileDialog {
         id: fileDialog
-        title: "Please choose a file"
+        title: "Please choose a repo"
         folder: shortcuts.home
+        selectFolder: true
         onAccepted: {
             console.log("You chose: " + fileDialog.fileUrls)
+            foo.open_repo(fileDialog.fileUrls)
         }
         onRejected: {
             console.log("Canceled")
