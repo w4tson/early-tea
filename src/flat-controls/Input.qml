@@ -1,6 +1,6 @@
 import QtQuick 2.3
-import QtQuick.Controls 1.2
-import QtQuick.Controls.Styles 1.2
+import QtQuick.Controls 1.3
+import QtQuick.Controls.Styles 1.3
 
 TextField {
     id: textField
@@ -64,6 +64,14 @@ TextField {
     }
 
     placeholderText: "Input";
+
+    Keys.onPressed: {
+        if ((event.key == Qt.Key_Return) && (event.modifiers & Qt.ControlModifier)) {
+            console.log('Enter and control!');
+            event.accepted = true;
+        }
+    }
+
     style: TextFieldStyle {
         padding.left: 12;
         font {
