@@ -65,12 +65,6 @@ TextField {
 
     placeholderText: "Input";
 
-    Keys.onPressed: {
-        if ((event.key == Qt.Key_Return) && (event.modifiers & Qt.ControlModifier)) {
-            console.log('Enter and control!');
-            event.accepted = true;
-        }
-    }
 
     style: TextFieldStyle {
         padding.left: 12;

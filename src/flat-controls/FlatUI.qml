@@ -51,7 +51,12 @@ Rectangle {
                 }
             }
 
-            WarningButton {
+            Comment {
+                id: comment
+                onSubmit: {
+                    console.log("Submitting: "+text);
+                    comment.clear();
+                }
             }
 
             DefaultButton {
