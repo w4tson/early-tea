@@ -59,8 +59,9 @@ Rectangle {
                 }
             }
 
-            DefaultButton {
+            ContactList {
             }
+
             DangerButton {
             }
         }
